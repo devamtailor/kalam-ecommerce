@@ -1,0 +1,92 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 6: Vibrant Play",
+  "domain_context": "Children's Ecommerce (Kalam To-Do Colouring Books)",
+  "color_palette": {
+    "primary": "#F57B2C",
+    "secondary": "#2DAEBB",
+    "accent": "#FBD40B",
+    "background_section": "#2390B6",
+    "background_page": "#FFFFFF",
+    "background_alt": "#F9FAFB",
+    "text": "#8A6A9F",
+    "text_dark": "#4A3556",
+    "text_light": "#FFFFFF",
+    "border": "#E5E7EB"
+  },
+  "typography": {
+    "font_family": {
+      "heading": "'Fredoka', 'Nunito', sans-serif",
+      "body": "'Nunito', 'Quicksand', sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-bold text-text",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold text-text",
+      "h3": "text-xl sm:text-2xl font-bold text-text",
+      "body_large": "text-lg sm:text-xl text-text_dark leading-relaxed",
+      "body": "text-base text-text_dark leading-relaxed",
+      "small": "text-sm text-text font-bold uppercase tracking-widest"
+    }
+  },
+  "layout_spacing": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 sm:py-24",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8",
+    "card_radius": "rounded-[32px]",
+    "button_radius": "rounded-full"
+  },
+  "components": {
+    "button": {
+      "primary": "bg-[#F57B2C] text-white rounded-full px-8 py-4 font-bold hover:-translate-y-1 hover:shadow-lg transition-transform duration-200",
+      "secondary": "bg-[#2DAEBB] text-white rounded-full px-8 py-4 font-bold hover:-translate-y-1 hover:shadow-lg transition-transform duration-200"
+    },
+    "card": {
+      "product": "bg-white rounded-[32px] p-6 shadow-sm border border-border/40 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center",
+      "feature": "bg-[#F9FAFB] rounded-[32px] p-8 border border-border/40 shadow-sm"
+    },
+    "header": {
+      "nav": "fixed w-full top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-border/20 shadow-sm py-4",
+      "links": "text-[#4A3556] font-bold hover:text-[#F57B2C] transition-colors"
+    }
+  },
+  "media_urls": {
+    "logo": "https://customer-assets.emergentagent.com/job_cd5f40a9-651f-4209-9bc2-941d75259399/artifacts/96wkl9n0_Untitled%20design%20%2814%29.png",
+    "hero_banner": "https://static.prod-images.emergentagent.com/jobs/cd5f40a9-651f-4209-9bc2-941d75259399/images/0ffcb8d647b026f08c6f5c59599a880d371dbb87d97c535a8f761791fb66e25c.png",
+    "products": [
+      {
+        "id": "prod_1",
+        "title": "Jungle To-Do Colouring Book",
+        "url": "https://static.prod-images.emergentagent.com/jobs/cd5f40a9-651f-4209-9bc2-941d75259399/images/10666c02c5ff6dc3e38051b2a564e4775eaac646994a1ec8b6255159114be80b.png"
+      },
+      {
+        "id": "prod_2",
+        "title": "Space Adventures To-Do",
+        "url": "https://static.prod-images.emergentagent.com/jobs/cd5f40a9-651f-4209-9bc2-941d75259399/images/7d777bedd0731939b82fa71f254874306cff1316dab1376bf10242b89d45bc94.png"
+      },
+      {
+        "id": "prod_3",
+        "title": "Dinosaur Friends To-Do",
+        "url": "https://static.prod-images.emergentagent.com/jobs/cd5f40a9-651f-4209-9bc2-941d75259399/images/ec0440a7a1c265d030e2b55a3b179e45314ee80b5efd702bd9cab1209f3ddc87.png"
+      },
+      {
+        "id": "prod_4",
+        "title": "Magical Forest To-Do",
+        "url": "https://images.unsplash.com/photo-1612539466809-8be5e4e01256?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxraWRzJTIwY29sb3JpbmclMjBib29rfGVufDB8fHx8MTc3NTA1NDc4OHww&ixlib=rb-4.1.0&q=85"
+      }
+    ],
+    "lifestyle": [
+      "https://images.pexels.com/photos/33761560/pexels-photo-33761560.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/7104398/pexels-photo-7104398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "instructions_to_main_agent": {
+    "general": "Build a fully responsive ecommerce site using pure React + Tailwind for front-end structure and Shadcn for complex interactions (if any, like admin data tables). Apply a playful, kids-friendly design (Archetype 6: Vibrant Play) with soft radiuses and the strict Kalam brand colors. Important: The project is a .js based React setup, do not output .tsx files.",
+    "colors_usage": "Use #F57B2C for primary Call To Actions (Add to Cart, Checkout). Use #2DAEBB and #FBD40B as secondary accents and fun badges/icons. Use #2390B6 ONLY as a full-bleed section background (e.g., in a featured banner or footer) to maintain a light, airy page background (#FFFFFF). Main heading text MUST use #8A6A9F, but body text should use a slightly darker tint for readability if #8A6A9F fails contrast checks against white.",
+    "fonts": "Import 'Fredoka' for headings and 'Nunito' for body text from Google Fonts. If Google Fonts are restricted, use standard rounded sans-serif fallbacks.",
+    "images": "Use the provided logo for the header and footer. Use the hero banner for the landing page. Pre-seed the MongoDB database with the 4 product URLs provided. For the about/brand story section, use the lifestyle images of kids drawing.",
+    "motion": "Implement playful hover states. Buttons should bounce or lift slightly (-translate-y-1). Product cards should lift and drop a soft shadow on hover.",
+    "testing": "Ensure EVERY interactive element has a unique 'data-testid' attribute (e.g., data-testid='add-to-cart-button', data-testid='checkout-name-input').",
+    "checkout_flow": "Keep it simple. Cart -> Checkout Form (Name, Address, Phone, COD option explicitly stating Cash on Delivery only) -> Order Confirmation Page. No payment gateway logic, just a mock order submission to the backend.",
+    "admin_panel": "Path: /adminkalam. Needs basic login. Once logged in, show a dashboard with two tabs or sections: Products (CRUD) and Orders (View list and update status: Pending, Shipped, Delivered). Apply the same playful design language but structured in a functional dashboard format."
+  }
+}
