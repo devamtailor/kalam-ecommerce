@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Plus, Edit, Trash2, LogOut, Package, BookOpen, RefreshCw, X, Save } from "lucide-react";
 import axios from "axios";
@@ -30,7 +30,12 @@ export default function AdminDashboard() {
   const [formError, setFormError] = useState("");
   const [saving, setSaving] = useState(false);
 
-  const authHeaders = { Authorization: `Bearer ${token}` };
+  
+  const authHeaders = useMemo(() => {
+   return {
+     Authorization: `Bearer ${token}`
+    };
+  }, [token]);
 
   const fetchProducts = useCallback(async () => {
     try {
