@@ -17,29 +17,72 @@ const generateToken = (userId) => {
  * POST /api/auth/login
  * Admin login with email & password
  */
+// const login = async (req, res) => {
+//   const { email, password } = req.body;
+
+//   // Input validation
+//   if (!email || !password) {
+//     return res.status(400).json({ message: 'Email and password are required' });
+//   }
+
+//   try {
+//     // Find admin user
+//     const user = await User.findOne({ email: email.toLowerCase().trim() });
+
+//     if (!user) {
+//       return res.status(401).json({ message: 'Invalid email or password' });
+//     }
+
+//     // Verify password
+//     const isMatch = await user.comparePassword(password);
+//     if (!isMatch) {
+//       return res.status(401).json({ message: 'Invalid email or password' });
+//     }
+
+//     // Generate token
+//     const token = generateToken(user._id);
+
+//     res.json({
+//       token,
+//       email: user.email,
+//       name: user.name,
+//       role: user.role,
+//     });
+//   } catch (error) {
+//     console.error('Login error:', error);
+//     res.status(500).json({ message: 'Server error during login' });
+//   }
+// };
 const login = async (req, res) => {
   const { email, password } = req.body;
 
-  // Input validation
+  console.log("🔐 LOGIN ATTEMPT");
+  console.log("Entered email:", email);
+  console.log("Entered password:", password);
+
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required' });
   }
 
   try {
-    // Find admin user
     const user = await User.findOne({ email: email.toLowerCase().trim() });
+
+    console.log("User found:", user);
 
     if (!user) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
 
-    // Verify password
+    console.log("Stored hashed password:", user.password);
+
     const isMatch = await user.comparePassword(password);
+
+    console.log("Password match result:", isMatch);
+
     if (!isMatch) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
 
-    // Generate token
     const token = generateToken(user._id);
 
     res.json({
@@ -53,7 +96,6 @@ const login = async (req, res) => {
     res.status(500).json({ message: 'Server error during login' });
   }
 };
-
 /**
  * GET /api/auth/me
  * Get current admin profile (protected)
