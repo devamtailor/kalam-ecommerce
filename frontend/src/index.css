@@ -58,3 +58,6 @@ h1, h2, h3, h4, h5 {
     border-style: inherit; border-color: inherit;
   }
 }
+#emergent-badge {
+  display: none !important;
+}
