@@ -39,7 +39,7 @@ export default function AdminDashboard() {
     } catch (e) {
       if (e.response?.status === 401) { logout(); navigate("/adminkalam"); }
     }
-  }, [token]);
+  }, [authHeaders, logout, navigate]);
 
   const fetchOrders = useCallback(async () => {
     try {
@@ -48,13 +48,18 @@ export default function AdminDashboard() {
     } catch (e) {
       if (e.response?.status === 401) { logout(); navigate("/adminkalam"); }
     }
-  }, [token]);
+  }, [authHeaders, logout, navigate]);
 
-  useEffect(() => {
-    if (!token) { navigate("/adminkalam"); return; }
-    Promise.all([fetchProducts(), fetchOrders()]).finally(() => setLoading(false));
-  }, [token]);
+ useEffect(() => {
+  if (!token) {
+    navigate("/adminkalam");
+    return;
+  }
 
+  Promise.all([fetchProducts(), fetchOrders()])
+    .finally(() => setLoading(false));
+
+}, [token, navigate, fetchProducts, fetchOrders]);
   const handleLogout = () => { logout(); navigate("/adminkalam"); };
 
   const openAddForm = () => { setEditingId(null); setForm(EMPTY_FORM); setFormError(""); setShowForm(true); };
